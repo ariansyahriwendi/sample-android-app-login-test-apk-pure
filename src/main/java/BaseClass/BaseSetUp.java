@@ -18,13 +18,12 @@ public class BaseSetUp {
 
     public static void setup() throws MalformedURLException {
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability(DEVICE_NAME, "Pixel 6 API 29");
+            caps.setCapability(UDID, "RR8M50B5JNA");
             caps.setCapability(PLATFORM_NAME, "Android");
-            caps.setCapability(PLATFORM_VERSION, "10.0");
+            caps.setCapability(PLATFORM_VERSION, "11.0");
             caps.setCapability(AUTOMATION_NAME, "UiAutomator2");
-//            caps.setCapability(APP, "/Users/macbookpro/git/sample-android-app-login-test-apk-pure/apk/Sample Android App - Login Tes_4.0_Apkpure.apk");
-            caps.setCapability(APP_PACKAGE, "com.loginmodule.learning");
-            caps.setCapability(APP_ACTIVITY, "com.loginmodule.learning.activities.LoginActivity");
+            caps.setCapability(APP_PACKAGE, "com.alfamart.alfagift");
+            caps.setCapability(APP_ACTIVITY, "com.alfamart.alfagift.screen.welcome.WelcomeActivity");
             caps.setCapability(NO_RESET, true);
 
             URL url = new URL("http://localhost:4723/wd/hub");

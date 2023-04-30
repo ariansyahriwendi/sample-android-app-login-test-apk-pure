@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e74c52-9e23-40b6-a3fb-c81e4c5b02be" name="Changes" comment="Register and Login">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/macbookpro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/macbookpro.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/cucumber.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseClass/BaseSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseClass/BaseSetUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseClass/BaseStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseClass/BaseStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Object/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Object/Register.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestStep/LoginStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestStep/LoginStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestStep/RegisterStep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BDD/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BDD/Login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BDD/Register.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +67,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Success To Register">
+  <component name="RunManager" selected="Cucumber Java.Feature: Login">
     <configuration name="Feature: Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/BDD/Login.feature" />
@@ -161,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: Login" />
+        <item itemvalue="Cucumber Java.Scenario: Success To Login" />
         <item itemvalue="Cucumber Java.Scenario: Success To Register" />
         <item itemvalue="Cucumber Java.Feature: Register" />
-        <item itemvalue="Cucumber Java.Feature: Login" />
         <item itemvalue="Cucumber Java.Scenario: Success To Register And Login" />
-        <item itemvalue="Cucumber Java.Scenario: Success To Login" />
       </list>
     </recent_temporary>
   </component>

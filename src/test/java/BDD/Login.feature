@@ -6,70 +6,85 @@ Feature: Login
 
   @SuccessToLogin
   Scenario: Success To Login
-    Given Account is registered
-    Given Login page opened
-    When I input email "andi@fakemail.com"
-    And I input password "password"
-    And I click login
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    When I click button Masuk
+    And I input "081806442929" on field Nomor HP atau No. kartu member
+    And I input "12345678" on field Masukkan Password
+#   sorry fake password because it's a real account
+    And I click button Lanjut
     Then Success to login
-    Then Redirect to welcome page
+    Then Open to beranda page
 
   @LoginWrongPassword
   Scenario: Login Wrong Password
-    Given Account is registered
-    Given Login page opened
-    When I input email "andi@fakemail.com"
-    And I input password "wrongpassword"
-    And I click login
-    Then Failed to login
-    Then Show alert wrong email or password
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    When I click button Masuk
+    And I input "081806442929" on field Nomor HP atau No. kartu member
+    And I input "87654321" on field Masukkan Password
+    And I click button Lanjut
+    Then Fail to login
+    Then Error mesage Password Anda salah. Silahkan coba lagi
 
-  @LoginWrongEmail
-  Scenario: Login Wrong Email
-    Given Account is registered
-    Given Login page opened
-    When I input email "wrongemail@fakemail.com"
-    And I input password "password"
-    And I click login
-    Then Failed to login
-    Then Show alert wrong email or password
+  @LoginDifferentAccountInOneDevice
+  Scenario: Login Different Account In One Device
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    Given Device connected with account 081806442929
+    When I click button Masuk
+    And I input "081806442928" on field Nomor HP atau No. kartu member
+    And I input "12345678" on field Masukkan Password
+    And I click button Lanjut
+    Then Fail to login
+    Then Pop up error message Login Gagal, Maaf device ini sudah terhubung dengan Id:xxx, No:xxx, dan No Hp:0818xxxxx929. Mohon hubungi Sahabat Alfamart
 
-  @LoginWrongEmailAndPassword
-  Scenario: Login Wrong Email And Password
-    Given Account is registered
-    Given Login page opened
-    When I input email "wrongemail@fakemail.com"
-    And I input password "wrongpassword"
-    And I click login
-    Then Failed to login
-    Then Show alert wrong email or password
+  @LoginNomorHPdanPasswordEmpty
+  Scenario: Login Nomor HP dan Password Empty
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    When I click button Masuk
+    And I click button Lanjut
+    Then Fail to login
+    Then Error message Nomor HP atau No. kartu Member tidak boleh kosong
+    Then Error message Kolom ini diperlukan
 
-  @LoginInvalidEmailFormat
-  Scenario: Login Invalid Email Format
-    Given Account is registered
-    Given Login page opened
-    When I input email "invalidemail"
-    And I input password "password"
-    And I click login
-    Then Failed to login
-    Then Show alert enter valid email
+  @LoginPasswordEmpty
+  Scenario: Login Password Empty
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    When I click button Masuk
+    And I input "081806442929" on field Nomor HP atau No. kartu member
+    And I click button Lanjut
+    Then Fail to login
+    Then Error message Kolom ini diperlukan
 
-  @LoginNoInputPassword
-  Scenario: Login No Input Password
-    Given Account is registered
-    Given Login page opened
-    When I input email "andi@fakemail.com"
-    And I input password ""
-    And I click login
-    Then Failed to login
-    Then Show alert enter password
+  @LoginPasswordIsLessThan8Character
+  Scenario: Login Password Is Less Than 8 Character
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    When I click button Masuk
+    And I input "081806442929" on field Nomor HP atau No. kartu member
+    And I input "1234567" on field Masukkan Password
+    And I click button Lanjut
+    Then Fail to login
+    Then Error message Password minimum delapan karakter
 
-  @LoginNoInputEmail
-  Scenario: Login No Input Email
-    Given Account is registered
-    Given Login page opened
-    When I input email ""
-    And I input password ""
-    And I click login
-    Then Failed to login
-    Then Show alert enter email
+  @LoginVisiblePassword
+  Scenario: Login Visible Password
+    Given Account created
+    Given Application opened
+    Given Account not logged in
+    When I click button Masuk
+    And I input "081806442929" on field Nomor HP atau No. kartu member
+    And I input "12345678" on field Masukkan Password
+    And I click icon visible password
+    And I click button Lanjut
+    Then Success to login
+    Then Open to beranda page
