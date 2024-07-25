@@ -8,11 +8,11 @@ Feature: Login
   Scenario: Success To Login
     Given Account is registered
     Given Login page opened
-#    When I input email "andi@fakemail.com"
-#    And I input password "password"
-#    And I click login
-#    Then Success to login
-#    Then Redirect to welcome page
+    When I input email "andi@fakemail.com"
+    And I input password "password"
+    And I click login
+    Then Success to login
+    Then Redirect to welcome page
 
   @LoginWrongPassword
   Scenario: Login Wrong Password
