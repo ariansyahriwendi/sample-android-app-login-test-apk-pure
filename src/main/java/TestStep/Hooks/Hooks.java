@@ -14,10 +14,10 @@ public class Hooks extends BaseStep {
         BaseSetUp.setup();
     }
 
-    @After
-    public void tearDown() {
-        BaseSetUp.teardown();
-        }
+//    @After
+//    public void tearDown() {
+//        BaseSetUp.teardown();
+//        }
 
 }
 
